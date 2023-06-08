@@ -1,0 +1,37 @@
+<div th:replace="fragments/header">...</div>
+<h1>Product List</h1>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    <tbody>
+    <tr th:each="p: ${products}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="'£'+${#numbers.formatDecimal(p.price, 0, 'COMMA', 2, 'POINT')}"></td>
+        <td><a th:href="@{/products/delete/{id}(id=${p.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<h1>Add a Product</h1>
+<form action="/products/" method="post">
+    <div class="form-group">
+        <label for="price">ID</label>
+        <input type="number" class="form-control"  min="1" step="any" name="id" id="id">
+    </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name">
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" min="1" step="any" name="price" id="price">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+<div th:replace="fragments/footer">...</div>
