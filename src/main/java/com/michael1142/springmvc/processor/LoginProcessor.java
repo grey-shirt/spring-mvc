@@ -7,6 +7,6 @@ import org.springframework.web.context.annotation.RequestScope;
 @RequestScope
 public class LoginProcessor {
     public boolean login() {
-
+        return true;
     }
 }
