@@ -1,7 +1,6 @@
 CREATE SEQUENCE product_seq START WITH 1 INCREMENT BY 50;
 
 CREATE TABLE product (
-    id BIGINT NOT NULL,
+    id BIGINT PRIMARY KEY NOT NULL,
     name VARCHAR(255),
-    price NUMERIC(38,2),
-    PRIMARY KEY (id));
+    price NUMERIC(38,2));
