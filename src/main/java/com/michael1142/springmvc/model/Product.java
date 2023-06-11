@@ -2,6 +2,7 @@ package com.michael1142.springmvc.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -12,5 +13,5 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
-    private Double price;
+    private BigDecimal price;
 }
