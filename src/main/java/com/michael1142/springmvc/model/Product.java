@@ -1,14 +1,16 @@
 package com.michael1142.springmvc.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
+@Entity
+@Table
 public class Product {
-    @NonNull
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
     private Long id;
-    @NonNull
     private String name;
-    @NonNull
     private Double price;
 }
